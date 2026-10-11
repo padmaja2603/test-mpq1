@@ -78,17 +78,16 @@ $$
 We use the standard results
 
 $$
-\mathcal{L}^{-1}\left\{\frac{1}{s+a}\right\}=e^{-at}
+\mathcal{L}^{-1}\{\frac{1}{s+a}\}=e^{-at}
 $$
 
 $$
-\mathcal{L}^{-1}\left\{\frac{1}{(s+a)^2}\right\}=te^{-at}
+\mathcal{L}^{-1}\{\frac{1}{(s+a)^2}\}=te^{-at}
 $$
 
 $$
-\mathcal{L}^{-1}\left\{\frac{1}{s+b}\right\}=e^{-bt}
+\mathcal{L}^{-1}\{\frac{1}{s+b}\}=e^{-bt}
 $$
-
 
 Applying the inverse Laplace transform term by term,
 
