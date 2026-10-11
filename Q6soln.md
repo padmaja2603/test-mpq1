@@ -205,18 +205,18 @@ Taking the inverse Laplace transform,
 $$
 x(t)=\frac{P}{m}
 \mathcal{L}^{-1}
-\left\{
+\left\(
 \frac{1}{\left(s+\frac{b}{2m}\right)^2}
-\right\}
+\right\)
 $$
 
 Using
 
 $$
 \mathcal{L}^{-1}
-\left\{
+\left\(
 \frac{1}{(s+a)^2}
-\right\}
+\right\)
 =te^{-at}
 $$
 
