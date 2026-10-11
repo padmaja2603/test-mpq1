@@ -1,95 +1,204 @@
-## Q2. Convolution Theorem Application
 
-We want to solve using the convolution theorem:
+# Q2 — Solving an Integral Equation Using Fourier Transforms
 
-$$
-(f * g)(x) = \int_{-\infty}^{\infty} f(y)\,g(x-y)\,dy
-= \mathcal{F}^{-1}\big[ F(k)\,G(k) \big]
-$$
-
----
-
-### Fourier Transform of $T_a(x)$
-
-By definition,
+Solve the integral equation
 
 $$
-\mathcal{F}[T_a(x)] = \int_{-a}^{a} e^{-ikx}\,dx
-= \frac{2\sin(ka)}{k}
+\int_{-\infty}^{\infty}
+y(\xi)e^{-2|x-\xi|}\,d\xi
+=e^{-x^2/4}
 $$
 
-So,
+## Solution
+
+### Step 1: Identify the Convolution
+
+The convolution of two functions $f(x)$ and $g(x)$ is defined as
 
 $$
-T_a(k) = \frac{2\sin(ka)}{k}
+(f*g)(x)=\frac{1}{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}f(\xi)g(x-\xi)\,d\xi
 $$
 
----
-
-### Convolution in Frequency Domain
-
-By the convolution theorem,
+Using the normalized Fourier transform convention,
 
 $$
-\mathcal{F}[T_a * T_a](k) = T_a(k)\,T_a(k)
-= \left(\frac{2\sin(ka)}{k}\right)^2
-= \frac{4\sin^2(ka)}{k^2}
+\mathcal{F}\{f(x)\}
+=\widetilde{f}(\omega)
+=\frac{1}{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}f(x)e^{-i\omega x}\,dx
 $$
 
----
-
-### Direct Check by Integration
-
-We know from the overlap method:
+the convolution theorem gives
 
 $$
-(T_a * T_a)(x) =
-\begin{cases}
-2a - |x|, & |x| \leq 2a \\
-0, & |x| > 2a
-\end{cases}
+\mathcal{F}\{f*g\}(\omega)
+=\sqrt{2\pi}\,\widetilde{f}(\omega)\widetilde{g}(\omega)
 $$
 
----
-
-### Fourier Transform of the Triangular Pulse
-
-Let $g(x) = (T_a * T_a)(x)$.
-
-Then,
+Comparing the given integral equation with the convolution integral, we identify
 
 $$
-G(k) = \int_{-2a}^{2a} (2a - |x|)\,e^{-ikx}\,dx
-$$
-
-Splitting into cosine and sine parts:
-
-$$
-G(k) = 2\int_{0}^{2a} (2a - x)\cos(kx)\,dx
-$$
-
-Evaluating gives:
-
-$$
-G(k) = \frac{4\sin^2(ka)}{k^2}
-$$
-
----
-
-### Final Result
-
-Thus, both methods agree:
-
-$$
-(T_a * T_a)(x) =
-\begin{cases}
-2a - |x|, & |x| \leq 2a \\
-0, & |x| > 2a
-\end{cases}
+f(x)=y(x)
 $$
 
 and
 
 $$
-\mathcal{F}[T_a * T_a](k) = \frac{4\sin^2(ka)}{k^2}
+g(x)=e^{-2|x|}
+$$
+
+Therefore, the given equation can be written as
+
+$$
+\int_{-\infty}^{\infty}
+y(\xi)e^{-2|x-\xi|}\,d\xi
+=e^{-x^2/4}
+$$
+
+### Step 2: Apply the Fourier Transform
+
+Let
+
+$$
+\mathcal{F}\{y(x)\}=Y(\omega)
+$$
+
+and
+
+$$
+\mathcal{F}\{g(x)\}=G(\omega)
+$$
+
+Taking the Fourier transform of both sides of the integral equation gives
+
+$$
+\sqrt{2\pi}\,Y(\omega)G(\omega)
+=\mathcal{F}\left\{e^{-x^2/4}\right\}
+$$
+
+We now calculate the two required Fourier transforms.
+
+### Step 3: Find the Fourier Transform of $g(x)=e^{-2|x|}$
+
+We use the standard Fourier transform formula
+
+$$
+\mathcal{F}\{e^{-\alpha|x|}\}
+=\frac{1}{\sqrt{2\pi}}
+\frac{2\alpha}{\alpha^2+\omega^2}
+$$
+
+Putting $\alpha=2$, we obtain
+
+$$
+G(\omega)
+=\frac{1}{\sqrt{2\pi}}
+\frac{4}{4+\omega^2}
+$$
+
+Therefore,
+
+$$
+G(\omega)=\frac{4}{\sqrt{2\pi}(4+\omega^2)}
+$$
+
+### Step 4: Find the Fourier Transform of $e^{-x^2/4}$
+
+We use the standard Gaussian Fourier transform formula
+
+$$
+\mathcal{F}\{e^{-\alpha x^2}\}
+=\frac{1}{\sqrt{2\alpha}}
+e^{-\omega^2/(4\alpha)}
+$$
+
+Putting $\alpha=\frac14$, we obtain
+
+$$
+\mathcal{F}\left\{e^{-x^2/4}\right\}
+=\sqrt{2}\,e^{-\omega^2}
+$$
+
+Hence, the transformed integral equation becomes
+
+$$
+\sqrt{2\pi}\,Y(\omega)
+\left[
+\frac{4}{\sqrt{2\pi}(4+\omega^2)}
+\right]
+=\sqrt{2}\,e^{-\omega^2}
+$$
+
+Simplifying,
+
+$$
+Y(\omega)\frac{4}{4+\omega^2}
+=\sqrt{2}\,e^{-\omega^2}
+$$
+
+Solving for $Y(\omega)$,
+
+$$
+Y(\omega)
+=\frac{\sqrt{2}}{4}
+e^{-\omega^2}(4+\omega^2)
+$$
+
+Therefore,
+
+$$
+Y(\omega)
+=\frac{e^{-\omega^2}(4+\omega^2)}{2\sqrt{2}}
+$$
+
+### Step 5: Apply the Inverse Fourier Transform
+
+The inverse Fourier transform is
+
+$$
+y(x)=\frac{1}{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}
+Y(\omega)e^{i\omega x}\,d\omega
+$$
+
+Substituting the expression for $Y(\omega)$,
+
+$$
+y(x)=\frac{1}{2\sqrt{4\pi}}
+\int_{-\infty}^{\infty}
+e^{-\omega^2}(4+\omega^2)e^{i\omega x}\,d\omega
+$$
+
+Equivalently,
+
+$$
+y(x)=\frac{1}{4\sqrt{2\pi}}
+\int_{-\infty}^{\infty}
+e^{-\omega^2+i\omega x}
+(4+\omega^2)\,d\omega
+$$
+
+This integral is the inverse Fourier transform representation of the solution.
+
+## Final Answer
+
+The Fourier transform of the unknown function is
+
+$$
+\boxed{
+Y(\omega)=
+\frac{e^{-\omega^2}(4+\omega^2)}{2\sqrt{2}}
+}
+$$
+
+and the solution is given by
+
+$$
+\boxed{
+y(x)=\frac{1}{\sqrt{2\pi}}
+\int_{-\infty}^{\infty}
+\frac{e^{-\omega^2}(4+\omega^2)}{2\sqrt{2}}
+e^{i\omega x}\,d\omega
+}
 $$
