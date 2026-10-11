@@ -142,19 +142,19 @@ Taking the inverse Laplace transform,
 $$
 x(t)=\frac{P}{m}
 \mathcal{L}^{-1}
-\left\{
+\left\(
 \frac{1}
 {\left(s+\frac{b}{2m}\right)^2+\omega_1^2}
-\right\}\right)
+\right\)
 $$
 
 We use the standard inverse Laplace transform formula
 
 $$
 \mathcal{L}^{-1}
-\left\{
+\left\(
 \frac{\omega}{(s+a)^2+\omega^2}
-\right\}\right)
+\right\)\right)
 =e^{-at}\sin(\omega t)
 $$
 
