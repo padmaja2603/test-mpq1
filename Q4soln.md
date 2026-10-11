@@ -131,15 +131,13 @@ $$
 From the standard inverse Laplace transforms,
 
 $$
-\mathcal{L}^{-1}\left\{\frac{1}{(s+a)^2}\right\}
-=te^{-at}
+\mathcal{L}^{-1}\{\frac{1}{(s+a)^2}\}=te^{-at}
 $$
 
 and
 
 $$
-\mathcal{L}^{-1}\left\{\frac{1}{s+b}\right\}
-=e^{-bt}
+\mathcal{L}^{-1}\{\frac{1}{s+b}\}=e^{-bt}
 $$
 
 Therefore, by the convolution theorem,
