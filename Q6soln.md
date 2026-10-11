@@ -154,7 +154,7 @@ $$
 \mathcal{L}^{-1}
 \left\(
 \frac{\omega}{(s+a)^2+\omega^2}
-\right\)\right)
+\right\)
 =e^{-at}\sin(\omega t)
 $$
 
