@@ -229,7 +229,7 @@ $$
 \boxed{
 \int_{-\infty}^{\infty}|f(x)|^2\,dx
 =
-\int_{-\infty}^{\infty}|\hat f(k)|^2\,dk
+\int_{-\infty}^{\infty}|\hat{f}(k)|^2\,dk
 }
 $$
 
