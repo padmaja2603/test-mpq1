@@ -72,9 +72,10 @@ $$
 
 Taking the Fourier transform of both sides of the integral equation gives
 
+
 $$
 \sqrt{2\pi}\,Y(\omega)G(\omega)
-=\mathcal{F}\left\{e^{-x^2/4}\right\}
+=\mathcal{F}\{e^{-x^2/4}\}
 $$
 
 We now calculate the two required Fourier transforms.
