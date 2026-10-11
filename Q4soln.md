@@ -194,12 +194,11 @@ Since $(a-b)^2=(b-a)^2$, this is equivalent to the result obtained using partial
 
 ## Final Answer
 
-For $a\neq b$,
+For $a \neq b$,
 
 $$
 \mathcal{L}^{-1}\{\frac{1}{(s+a)^2(s+b)}\}
-=
-\frac{te^{-at}}{b-a}
-+\frac{e^{-bt}-e^{-at}}{(b-a)^2}
+= \frac{te^{-at}}{b-a}
++ \frac{e^{-bt}-e^{-at}}{(b-a)^2}
 $$
 
