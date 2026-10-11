@@ -102,7 +102,7 @@ $$
 
 ---
 
-### ✅ Final Result
+### Final Result
 
 Thus, both methods agree:
 
