@@ -279,15 +279,7 @@ The precise jump condition depends on the differential operator and the coeffici
 
 In three dimensions, a common form is
 
-$$
-\boxed{
-\frac{1}{c^2}\frac{\partial^2G}{\partial t^2}
--\nabla^2G
-=
-\delta(\mathbf r-\mathbf r')\delta(t-t')
-}
-$$
-
+$$\boxed{\frac{1}{c^2}\frac{\partial^2 G}{\partial t^2}-\nabla^2 G=\delta(\mathbf{r}-\mathbf{r}')\delta(t-t')}$$
 The Green's function describes how a localized source produces a wave response.
 
 The choice of retarded or advanced Green's function determines the time direction of the response.
