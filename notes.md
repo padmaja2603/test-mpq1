@@ -546,17 +546,8 @@ $$
 
 Then calculate the inverse Laplace transform to obtain $y(t)$.
 
-### 6.2 Procedure for exam problems
 
-1. Take the Laplace transform of each term.
-2. Substitute the initial conditions.
-3. Collect all terms involving $Y(s)$.
-4. Solve algebraically for $Y(s)$.
-5. Simplify using partial fractions or standard formulas.
-6. Apply the inverse Laplace transform.
-7. Check that the solution satisfies the initial conditions.
-
-### 6.3 Worked example: Solve an initial-value problem
+### 6.2 Worked example: Solve an initial-value problem
 
 Solve
 
@@ -595,7 +586,7 @@ $$
 Using
 
 $$
-\mathcal L^{-1}\left\{\frac{a}{s^2+a^2}\right\}
+\mathcal L^{-1}\left\(\frac{a}{s^2+a^2}\right\)
 =\sin(at),
 $$
 
