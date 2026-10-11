@@ -162,12 +162,7 @@ Here, $k$ is the frequency variable in the transform representation.
 
 The Fourier transform preserves the squared integral norm:
 
-$$
-\int_{-\infty}^{\infty} |f(x)|^2 \, dx
-=
-\int_{-\infty}^{\infty} |\hat{f}(k)|^2 \, dk
-$$
-
+$$\int_{-\infty}^{\infty}|f(x)|^2\,dx=\int_{-\infty}^{\infty}|\hat{f}(k)|^2\,dk$$
 
 ### 3.5 Convolution theorem
 
