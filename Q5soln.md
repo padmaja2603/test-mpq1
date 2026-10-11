@@ -3,8 +3,7 @@
 We are given the differential equation:
 
 $$
-- D \frac{d^2\Phi(x)}{dx^2} + K^2 D \,\Phi(x) = Q\,\delta(x - x_0)
-
+- D \frac{d^2 \Phi(x)}{dx^2} + K^2 D \,\Phi(x) = Q \,\delta(x - x_0)
 $$
 
 ---
