@@ -1,6 +1,6 @@
 > ✍️ **Added by:** Padmaja Rajopadhye, 2026-10-12
 
-## 1. Integral Transforms
+## Integral Transforms
 
 An integral transform converts a function into another function using a kernel.
 
@@ -30,11 +30,11 @@ $$
 
 ---
 
-## 2. Fourier Series
+## Fourier Series
 
 A Fourier series represents a periodic function as a sum of sine and cosine functions.
 
-### 2.1 General formula
+### General formula
 
 For a function of period $2\pi$:
 
@@ -58,7 +58,7 @@ $$
 b_n=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin nx\,dx
 $$
 
-### 2.2 Important symmetry properties
+### Important symmetry properties
 
 | Type of function | Condition | Fourier coefficients |
 |---|---|---|
@@ -82,7 +82,7 @@ $$
 b_n=\frac{2}{\pi}\int_0^\pi f(x)\sin nx\,dx
 $$
 
-### 2.3 Fourier series for a function of period $2L$
+### Fourier series for a function of period $2L$
 
 $$
 f(x)=\frac{a_0}{2}+
@@ -109,7 +109,7 @@ b_n=\frac{1}{L}\int_{-L}^{L}
 f(x)\sin\left(\frac{n\pi x}{L}\right)\,dx
 $$
 
-### 2.4 Fourier series convergence
+### Fourier series convergence
 
 At a point of continuity, the Fourier series converges to $f(x)$.
 
@@ -123,11 +123,11 @@ $$
 
 > ✍️ **Added by:** Anisha, 2026-10-12
 
-## 3. Fourier Transform
+## Fourier Transform
 
 The Fourier transform expresses a function in terms of its frequency components. It is useful in wave analysis and differential equations.
 
-### 3.1 Definition
+### Definition
 
 Using the convention in these notes:
 
@@ -138,7 +138,7 @@ $$
 }
 $$
 
-### 3.2 Inverse Fourier transform
+### Inverse Fourier transform
 
 $$
 \boxed{
@@ -149,7 +149,7 @@ $$
 
 Here, $k$ is the frequency variable in the transform representation.
 
-### 3.3 Important properties
+### Important properties
 
 | Property | Fourier transform |
 |---|---|
@@ -160,13 +160,13 @@ Here, $k$ is the frequency variable in the transform representation.
 | Translation | $\mathcal F[f(x-a)]=e^{-ika}\hat f(k)$ |
 | Convolution | $\mathcal F[f*g]=\sqrt{2\pi}\,\hat f(k)\hat g(k)$ |
 
-### 3.4 Parseval's relation
+### Parseval's relation
 
 The Fourier transform preserves the squared integral norm:
 
 $$\int_{-\infty}^{\infty}|f(x)|^2\,dx=\int_{-\infty}^{\infty}|\hat{f}(k)|^2\,dk$$
 
-### 3.5 Convolution theorem
+### Convolution theorem
 
 The convolution of two functions is defined as
 
@@ -185,7 +185,7 @@ $$
 
 The important idea is that convolution in the original domain becomes multiplication in the Fourier domain.
 
-### 3.6 Worked example: Fourier transform of a Gaussian
+### Worked example: Fourier transform of a Gaussian
 
 Consider
 
@@ -229,11 +229,11 @@ Thus, the Fourier transform of a Gaussian is also a Gaussian.
 
 > ✍️ **Added by:** Ronak, 2026-10-12
 
-## 4. Green's Functions
+## Green's Functions
 
 A Green's function is used to solve differential equations with a source term and specified boundary conditions.
 
-### 4.1 Definition
+### Definition
 
 Consider a linear differential equation:
 
@@ -261,13 +261,13 @@ $$
 
 The integration limits depend on the domain of the problem.
 
-### 4.2 Meaning of the Green's function
+### Meaning of the Green's function
 
 - It describes the response at $x$ due to a source placed at $x'$.
 - It incorporates the relevant boundary conditions.
 - It converts a differential-equation problem into an integral.
 
-### 4.3 Green's function for a second-order equation
+### Green's function for a second-order equation
 
 To construct a Green's function:
 
@@ -279,7 +279,7 @@ To construct a Green's function:
 
 The precise jump condition depends on the differential operator and the coefficient of its highest derivative.
 
-### 4.4 Green's function for the wave equation
+### Green's function for the wave equation
 
 In three dimensions, a common form is
 
@@ -288,7 +288,7 @@ The Green's function describes how a localized source produces a wave response.
 
 The choice of retarded or advanced Green's function determines the time direction of the response.
 
-### 4.5 Worked example: Green's function for a first-order operator
+### Worked example: Green's function for a first-order operator
 
 Consider
 
@@ -316,11 +316,11 @@ This example illustrates how a Green's function can be constructed directly from
 
 ---
 
-## 5. Laplace Transform
+## Laplace Transform
 
 The Laplace transform is particularly useful for solving differential equations with initial conditions.
 
-### 5.1 Definition
+### Definition
 
 For $t\geq 0$,
 
@@ -333,7 +333,7 @@ $$
 
 Here, $s$ is generally a complex variable.
 
-### 5.2 Standard Laplace transforms
+### Standard Laplace transforms
 
 | Function $f(t)$ | Laplace transform |
 |---|---|
@@ -347,7 +347,7 @@ Here, $s$ is generally a complex variable.
 
 These standard results are essential for solving Laplace-transform problems quickly.
 
-### 5.3 Important properties
+### Important properties
 
 **1. Linearity**
 
@@ -401,7 +401,7 @@ $$
 }
 $$
 
-### 5.4 Inverse Laplace transform
+### Inverse Laplace transform
 
 If
 
@@ -421,7 +421,7 @@ The inverse transform recovers the original function from its Laplace-domain exp
 
 Common techniques include partial fractions, standard transform pairs, and inverse-transform formulas.
 
-### 5.5 Worked example: Inverse Laplace transform using partial fractions
+### Worked example: Inverse Laplace transform using partial fractions
 
 Find
 
@@ -496,11 +496,11 @@ $$
 
 > ✍️ **Added by:** Lokesh Bhadawat, 2026-10-12
 
-## 6. Solving Differential Equations Using Laplace Transforms
+## Solving Differential Equations Using Laplace Transforms
 
 This is one of the most important applications covered in these notes.
 
-### 6.1 General equation
+### General equation
 
 Consider
 
@@ -541,7 +541,7 @@ $$
 Then calculate the inverse Laplace transform to obtain $y(t)$.
 
 
-### 6.2 Worked example: Solve an initial-value problem
+### Worked example: Solve an initial-value problem
 
 Solve
 
@@ -606,17 +606,17 @@ Both initial conditions are satisfied.
 
 > ✍️ **Added by:** Vivek, 2026-10-12
 
-## 7. Laplace Convolution Theorem
+## Laplace Convolution Theorem
 
 The convolution theorem connects multiplication in the transform domain with convolution in the time domain.
 
-### 7.1 Definition
+### Definition
 
 $$
 (f*g)(t)=\int_0^t f(t-u)g(u)\,du
 $$
 
-### 7.2 Convolution theorem
+### Convolution theorem
 
 $$
 \boxed{
@@ -635,7 +635,7 @@ $$
 
 This is useful when a product of Laplace transforms is difficult to invert directly.
 
-### 7.3 Worked example: Convolution of two exponential functions
+### Worked example: Convolution of two exponential functions
 
 Let
 
