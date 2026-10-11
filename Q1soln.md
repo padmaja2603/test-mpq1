@@ -5,11 +5,12 @@ Define the rectangular pulse
 
 $$
 \Pi_a(x)=
-\begin{array}{ll}
-1, & |x|<a,\\
-0, & |x|\geq a.
-\end{array}
+\begin{aligned}
+&1 \quad \text{if } |x|<a,\\
+&0 \quad \text{if } |x|\geq a.
+\end{aligned}
 $$
+
 
 We find the convolution $(\Pi_a * \Pi_a)(x)$ and its Fourier transform.
 
