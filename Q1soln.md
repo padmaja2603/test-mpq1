@@ -1,84 +1,88 @@
-# Q1 --- Convolution of Two Rectangular Pulses
 
-Let the rectangular pulse of height (1) be defined by
+# Q1 — Convolution of Two Rectangular Pulses
 
-\[ `\Pi`{=tex}\_a(x)=
-```{=tex}
-\begin{cases}
+Define the rectangular pulse
+
+$$
+\Pi_a(x)=
+\begin{array}{ll}
 1, & |x|<a,\\
-0, & |x|\ge a.
-\end{cases}
-```
-\]
+0, & |x|\geq a.
+\end{array}
+$$
 
-We want to find the convolution ((`\Pi`{=tex}\_a \* `\Pi`{=tex}\_a)(x))
-and its Fourier transform.
+We find the convolution $(\Pi_a * \Pi_a)(x)$ and its Fourier transform.
 
-## (a) Convolution of the rectangular pulses
+## (a) Convolution of the Rectangular Pulses
 
-By definition, the convolution of two functions is
+By definition, the convolution is
 
-\[ (`\Pi`{=tex}\_a \* `\Pi`{=tex}*a)(x)
-=`\int`{=tex}*{-`\infty`{=tex}}\^{`\infty`{=tex}}`\Pi`{=tex}\_a(y),`\Pi`{=tex}\_a(x-y),dy.
-\]
+$$
+(\Pi_a * \Pi_a)(x)
+=\int_{-\infty}^{\infty}
+\Pi_a(y)\Pi_a(x-y)\,dy.
+$$
 
-Each rectangular pulse has height (1) and is nonzero over an interval of
-width (2a). When one pulse is shifted by (x), the integrand equals (1)
-where the two pulses overlap and (0) elsewhere. Thus, the convolution
-equals the **length of the overlap**.
+The integrand equals $1$ where the two rectangular pulses overlap and $0$ elsewhere. Therefore, the convolution equals the length of their overlap.
 
-### Case 1: (\|x\|\<2a)
+### Case 1: $|x|<2a$
 
-The two pulses overlap. The overlap length is
+The two pulses overlap.
 
-\[ 2a-\|x\|. \]
+For $x\geq 0$, the overlap extends from $x-a$ to $a$. Hence, its length is
 
-For example, if (x`\ge 0`{=tex}), the overlap is from (x-a) to (a), so
-its length is
+$$
+a-(x-a)=2a-x.
+$$
 
-\[ a-(x-a)=2a-x. \]
+For $x<0$, the overlap length is $2a+x$.
 
-If (x\<0), the overlap length is (2a+x). Combining both cases gives
-(2a-\|x\|).
+Combining both cases, the overlap length is $2a-|x|$.
 
-### Case 2: (\|x\|`\ge `{=tex}2a)
+### Case 2: $|x|\geq 2a$
 
-The pulses do not overlap (apart from a possible single endpoint, which
-has zero length). Therefore,
+The pulses do not overlap over an interval of positive length. Therefore,
 
-\[ (`\Pi`{=tex}\_a \* `\Pi`{=tex}\_a)(x)=0. \]
+$$
+(\Pi_a * \Pi_a)(x)=0.
+$$
 
-Hence,
+Hence, the convolution is
 
-\[ `\boxed{
+$$
+\boxed{
 (\Pi_a * \Pi_a)(x)=
 \begin{cases}
 2a-|x|, & |x|<2a,\\
-0, & |x|\ge 2a.
+0, & |x|\geq 2a.
 \end{cases}
-}`{=tex} \]
+}
+$$
 
-This is a triangular pulse with its maximum value (2a) at (x=0), and
-zeros at (x=`\pm `{=tex}2a).
+This is a triangular pulse with maximum value $2a$ at $x=0$ and zeros at $x=\pm 2a$.
 
-## (b) Fourier transform
+## (b) Fourier Transform
 
 Use the Fourier transform convention
 
-\[ `\mathcal{F}`{=tex}{f}(k)=`\widetilde `{=tex}f(k)
-=`\int`{=tex}\_{-`\infty`{=tex}}^{`\infty`{=tex}}f(x)e^{-ikx},dx. \]
+$$
+\mathcal{F}\{f\}(k)
+=\widetilde{f}(k)
+=\int_{-\infty}^{\infty}f(x)e^{-ikx}\,dx.
+$$
 
-With this convention, the convolution theorem states that
+The convolution theorem states that
 
-\[ `\mathcal{F}`{=tex}{f\*g}(k)
-=`\widetilde `{=tex}f(k),`\widetilde `{=tex}g(k). \]
+$$
+\mathcal{F}\{f*g\}(k)
+=\widetilde{f}(k)\widetilde{g}(k).
+$$
 
-### Method 1: Use the convolution theorem
+### Method 1: Using the Convolution Theorem
 
 First, calculate the Fourier transform of the rectangular pulse:
 
-\[
-```{=tex}
+$$
 \begin{aligned}
 \widetilde{\Pi}_a(k)
 &=\int_{-\infty}^{\infty}\Pi_a(x)e^{-ikx}\,dx\\
@@ -87,113 +91,120 @@ First, calculate the Fourier transform of the rectangular pulse:
 &=\frac{e^{ika}-e^{-ika}}{ik}\\
 &=\frac{2\sin(ka)}{k}.
 \end{aligned}
-```
-\]
+$$
 
 Since the convolution contains two identical rectangular pulses,
 
-\[
-```{=tex}
+$$
 \begin{aligned}
 \mathcal{F}\{\Pi_a*\Pi_a\}(k)
-&=\widetilde{\Pi}_a(k)\,\widetilde{\Pi}_a(k)\\
+&=\widetilde{\Pi}_a(k)\widetilde{\Pi}_a(k)\\
 &=\left(\frac{2\sin(ka)}{k}\right)^2.
 \end{aligned}
-```
-\]
+$$
 
 Therefore,
 
-\[ `\boxed{
+$$
+\boxed{
 \mathcal{F}\{\Pi_a*\Pi_a\}(k)
 =\frac{4\sin^2(ka)}{k^2}
-}`{=tex} \]
+}
+$$
 
-for (k`\ne 0`{=tex}). At (k=0), the value is obtained by taking the
-limit:
+for $k\neq 0$.
 
-\[ `\lim`{=tex}\_{k`\to0`{=tex}}`\frac{4\sin^2(ka)}{k^2}`{=tex}=4a\^2.
-\]
+At $k=0$, taking the limit gives
 
-### Method 2: Verify by directly transforming the triangular pulse
+$$
+\lim_{k\to 0}\frac{4\sin^2(ka)}{k^2}
+=4a^2.
+$$
 
-From part (a), let
+### Method 2: Direct Fourier Transform of the Triangular Pulse
 
-\[ g(x)=(`\Pi`{=tex}\_a\*`\Pi`{=tex}\_a)(x)=
-```{=tex}
+From part (a), define
+
+$$
+g(x)=(\Pi_a*\Pi_a)(x)=
 \begin{cases}
 2a-|x|, & |x|<2a,\\
-0, & |x|\ge 2a.
+0, & |x|\geq 2a.
 \end{cases}
-```
-\]
+$$
 
 Its Fourier transform is
 
-\[ `\widetilde `{=tex}g(k)
-=`\int`{=tex}\_{-2a}^{2a}(2a-\|x\|)e^{-ikx},dx. \]
+$$
+\widetilde{g}(k)
+=\int_{-2a}^{2a}(2a-|x|)e^{-ikx}\,dx.
+$$
 
-Because (g(x)) is even, the sine part of
-(e\^{-ikx}=`\cos`{=tex}(kx)-i`\sin`{=tex}(kx)) integrates to zero.
-Hence,
+Since $g(x)$ is even, the sine part of the exponential integrates to zero. Thus,
 
-\[
-```{=tex}
-\begin{aligned}
-\widetilde g(k)
-&=2\int_0^{2a}(2a-x)\cos(kx)\,dx.
-\end{aligned}
-```
-\]
+$$
+\widetilde{g}(k)
+=2\int_0^{2a}(2a-x)\cos(kx)\,dx.
+$$
 
 Integrating by parts,
 
-\[
-```{=tex}
+$$
 \begin{aligned}
 \int_0^{2a}(2a-x)\cos(kx)\,dx
-&=\left[\frac{(2a-x)\sin(kx)}{k}\right]_0^{2a}
-+\frac{1}{k}\int_0^{2a}\sin(kx)\,dx\\
+&=\left[\frac{(2a-x)\sin(kx)}{k}\right]_0^{2a}\\
+&\quad+\frac{1}{k}\int_0^{2a}\sin(kx)\,dx\\
 &=\frac{1-\cos(2ka)}{k^2}.
 \end{aligned}
-```
-\]
+$$
 
 Therefore,
 
-\[
-```{=tex}
+$$
 \begin{aligned}
-\widetilde g(k)
+\widetilde{g}(k)
 &=\frac{2[1-\cos(2ka)]}{k^2}\\
 &=\frac{4\sin^2(ka)}{k^2},
 \end{aligned}
-```
-\]
+$$
 
-where (1-`\cos`{=tex}(2`\theta`{=tex})=2`\sin`{=tex}\^2`\theta`{=tex})
-has been used.
+where we used the identity
 
-This agrees with the result obtained from the convolution theorem.
+$$
+1-\cos(2\theta)=2\sin^2\theta.
+$$
 
-## Final results
+This agrees with the result obtained using the convolution theorem.
 
-\[ `\boxed{
+## Final Results
+
+The convolution is
+
+$$
+\boxed{
 (\Pi_a*\Pi_a)(x)=
 \begin{cases}
 2a-|x|, & |x|<2a,\\
-0, & |x|\ge 2a
+0, & |x|\geq 2a.
 \end{cases}
-}`{=tex} \]
+}
+$$
 
-and
+Its Fourier transform is
 
-\[ `\boxed{
+$$
+\boxed{
 \mathcal{F}\{\Pi_a*\Pi_a\}(k)
 =\frac{4\sin^2(ka)}{k^2}
-}`{=tex} \]
+}
+$$
 
-with the continuous value at (k=0) given by (4a\^2).
+with the value at $k=0$ defined by continuity as
+
+$$
+\boxed{\widetilde{g}(0)=4a^2.}
+$$
+
 
 
 
