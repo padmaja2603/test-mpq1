@@ -435,7 +435,7 @@ Find
 
 $$
 f(t)=\mathcal L^{-1}
-\left\{\frac{1}{s(s+2)}\right\}.
+\left\(\frac{1}{s(s+2)}\right\).
 $$
 
 **Step 1: Apply partial fractions**
@@ -477,13 +477,13 @@ $$
 Using
 
 $$
-\mathcal L^{-1}\left\{\frac1s\right\}=1
+\mathcal L^{-1}\left\(\frac1s\right\)=1
 $$
 
 and
 
 $$
-\mathcal L^{-1}\left\{\frac{1}{s+a}\right\}=e^{-at},
+\mathcal L^{-1}\left\(\frac{1}{s+a}\right\)=e^{-at},
 $$
 
 we obtain
