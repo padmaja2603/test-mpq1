@@ -145,7 +145,7 @@ x(t)=\frac{P}{m}
 \left\{
 \frac{1}
 {\left(s+\frac{b}{2m}\right)^2+\omega_1^2}
-\right\}
+\right\}\right)
 $$
 
 We use the standard inverse Laplace transform formula
@@ -154,7 +154,7 @@ $$
 \mathcal{L}^{-1}
 \left\{
 \frac{\omega}{(s+a)^2+\omega^2}
-\right\}
+\right\}\right)
 =e^{-at}\sin(\omega t)
 $$
 
