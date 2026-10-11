@@ -16,63 +16,39 @@ $$
 
 #### Step 1: Differential Equations
 
-
-
-\[
+$$
 \frac{d[A]}{dt} = -K_1 [A]
-\]
+$$
 
-
-
-
-
-\[
+$$
 \frac{d[B]}{dt} = K_1 [A] - K_2 [B]
-\]
+$$
 
-
-
-
-
-\[
+$$
 \frac{d[C]}{dt} = K_2 [B] - K_3 [C]
-\]
-
-
+$$
 
 ---
 
 #### Step 2: Solve for $[A](t)$
 
-Taking Laplace transform:
+Laplace transform:
 
-
-
-\[
+$$
 (s+K_1) A(s) = A_0
-\]
-
-
+$$
 
 Thus,
 
-
-
-\[
+$$
 A(s) = \frac{A_0}{s+K_1}
-\]
-
-
+$$
 
 Inverse Laplace:
 
-
-
-\[
+$$
 [A](t) = A_0 e^{-K_1 t}
-\]
-
-
+$$
 
 ---
 
@@ -80,43 +56,27 @@ Inverse Laplace:
 
 Laplace transform:
 
-
-
-\[
+$$
 (s+K_2) B(s) = K_1 A(s)
-\]
-
-
+$$
 
 Substitute $A(s)$:
 
-
-
-\[
+$$
 B(s) = \frac{A_0 K_1}{(s+K_1)(s+K_2)}
-\]
-
-
+$$
 
 Partial fractions:
 
-
-
-\[
+$$
 B(s) = \frac{A_0 K_1}{K_2 - K_1} \left( \frac{1}{s+K_1} - \frac{1}{s+K_2} \right)
-\]
-
-
+$$
 
 Inverse Laplace:
 
-
-
-\[
+$$
 [B](t) = \frac{A_0 K_1}{K_2 - K_1} \left( e^{-K_1 t} - e^{-K_2 t} \right)
-\]
-
-
+$$
 
 ---
 
@@ -124,79 +84,51 @@ Inverse Laplace:
 
 Laplace transform:
 
-
-
-\[
+$$
 (s+K_3) C(s) = K_2 B(s)
-\]
-
-
+$$
 
 Substitute $B(s)$:
 
-
-
-\[
+$$
 C(s) = \frac{A_0 K_1 K_2}{(s+K_1)(s+K_2)(s+K_3)}
-\]
-
-
+$$
 
 Partial fractions:
 
-
-
-\[
+$$
 C(s) = \frac{A_0 K_1 K_2}{(K_2-K_1)(K_3-K_1)} \cdot \frac{1}{s+K_1}
 + \frac{A_0 K_1 K_2}{(K_1-K_2)(K_3-K_2)} \cdot \frac{1}{s+K_2}
 + \frac{A_0 K_1 K_2}{(K_1-K_3)(K_2-K_3)} \cdot \frac{1}{s+K_3}
-\]
-
-
+$$
 
 Inverse Laplace:
 
-
-
-\[
+$$
 [C](t) =
 \frac{A_0 K_1 K_2}{(K_2-K_1)(K_3-K_1)} e^{-K_1 t}
 + \frac{A_0 K_1 K_2}{(K_1-K_2)(K_3-K_2)} e^{-K_2 t}
 + \frac{A_0 K_1 K_2}{(K_1-K_3)(K_2-K_3)} e^{-K_3 t}
-\]
-
-
+$$
 
 ---
 
 ###  Final Results
 
-
-
-\[
+$$
 [A](t) = A_0 e^{-K_1 t}
-\]
+$$
 
-
-
-
-
-\[
+$$
 [B](t) = \frac{A_0 K_1}{K_2 - K_1} \left( e^{-K_1 t} - e^{-K_2 t} \right)
-\]
+$$
 
-
-
-
-
-\[
+$$
 [C](t) =
 \frac{A_0 K_1 K_2}{(K_2-K_1)(K_3-K_1)} e^{-K_1 t}
 + \frac{A_0 K_1 K_2}{(K_1-K_2)(K_3-K_2)} e^{-K_2 t}
 + \frac{A_0 K_1 K_2}{(K_1-K_3)(K_2-K_3)} e^{-K_3 t}
-\]
-
-
+$$
 
 ---
 
