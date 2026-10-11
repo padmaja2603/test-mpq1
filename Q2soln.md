@@ -117,7 +117,7 @@ $$
 Putting $\alpha=\frac14$, we obtain
 
 $$
-\mathcal{F}\left\{e^{-x^2/4}\right\}
+\mathcal{F}\{e^{-x^2/4}\}
 =\sqrt{2}\,e^{-\omega^2}
 $$
 
