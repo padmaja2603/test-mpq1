@@ -1,77 +1,203 @@
-### Q7. Solution using Fourier Transform
+### Q7. Sequence of First-Order Reactions
 
-We are given the differential equation:
+We are given the sequence:
 
 $$
-- D \frac{d^2 \Phi(x)}{dx^2} + K^2 D \,\Phi(x) = Q \,\delta(x - x_0)
+A \xrightarrow{K_1} B \xrightarrow{K_2} C \xrightarrow{K_3} D
+$$
+
+with initial conditions:
+
+$$
+[A](0) = A_0, \quad [B](0) = [C](0) = 0
 $$
 
 ---
 
-#### Step 1: Fourier Transform
+#### Step 1: Differential Equations
 
-Taking Fourier transform:
 
-$$
-- D (ik)^2 \Phi(k) + K^2 D \,\Phi(k) = Q e^{-ikx_0}
-$$
 
-Simplify:
+\[
+\frac{d[A]}{dt} = -K_1 [A]
+\]
 
-$$
-D (k^2 + K^2)\,\Phi(k) = Q e^{-ikx_0}
-$$
+
+
+
+
+\[
+\frac{d[B]}{dt} = K_1 [A] - K_2 [B]
+\]
+
+
+
+
+
+\[
+\frac{d[C]}{dt} = K_2 [B] - K_3 [C]
+\]
+
+
+
+---
+
+#### Step 2: Solve for $[A](t)$
+
+Taking Laplace transform:
+
+
+
+\[
+(s+K_1) A(s) = A_0
+\]
+
+
 
 Thus,
 
-$$
-\Phi(k) = \frac{Q e^{-ikx_0}}{D (k^2 + K^2)}
-$$
+
+
+\[
+A(s) = \frac{A_0}{s+K_1}
+\]
+
+
+
+Inverse Laplace:
+
+
+
+\[
+[A](t) = A_0 e^{-K_1 t}
+\]
+
+
 
 ---
 
-#### Step 2: Inverse Fourier Transform
+#### Step 3: Solve for $[B](t)$
 
-Now, applying inverse Fourier transform:
+Laplace transform:
 
-$$
-\Phi(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \Phi(k)\,e^{ikx}\,dk
-$$
 
-Substitute $\Phi(k)$:
 
-$$
-\Phi(x) = \frac{Q}{2\pi D} \int_{-\infty}^{\infty} \frac{e^{ik(x - x_0)}}{k^2 + K^2}\,dk
-$$
+\[
+(s+K_2) B(s) = K_1 A(s)
+\]
+
+
+
+Substitute $A(s)$:
+
+
+
+\[
+B(s) = \frac{A_0 K_1}{(s+K_1)(s+K_2)}
+\]
+
+
+
+Partial fractions:
+
+
+
+\[
+B(s) = \frac{A_0 K_1}{K_2 - K_1} \left( \frac{1}{s+K_1} - \frac{1}{s+K_2} \right)
+\]
+
+
+
+Inverse Laplace:
+
+
+
+\[
+[B](t) = \frac{A_0 K_1}{K_2 - K_1} \left( e^{-K_1 t} - e^{-K_2 t} \right)
+\]
+
+
 
 ---
 
-#### Step 3: Evaluate Integral
+#### Step 4: Solve for $[C](t)$
 
-Using complex analysis:
+Laplace transform:
 
-$$
-\int_{-\infty}^{\infty} \frac{e^{ik(x - x_0)}}{k^2 + K^2}\,dk
-= \pi \frac{e^{-K|x - x_0|}}{K}
-$$
 
-Therefore,
 
-$$
-\Phi(x) = \frac{Q}{2KD}\,e^{-K|x - x_0|}
-$$
+\[
+(s+K_3) C(s) = K_2 B(s)
+\]
+
+
+
+Substitute $B(s)$:
+
+
+
+\[
+C(s) = \frac{A_0 K_1 K_2}{(s+K_1)(s+K_2)(s+K_3)}
+\]
+
+
+
+Partial fractions:
+
+
+
+\[
+C(s) = \frac{A_0 K_1 K_2}{(K_2-K_1)(K_3-K_1)} \cdot \frac{1}{s+K_1}
++ \frac{A_0 K_1 K_2}{(K_1-K_2)(K_3-K_2)} \cdot \frac{1}{s+K_2}
++ \frac{A_0 K_1 K_2}{(K_1-K_3)(K_2-K_3)} \cdot \frac{1}{s+K_3}
+\]
+
+
+
+Inverse Laplace:
+
+
+
+\[
+[C](t) =
+\frac{A_0 K_1 K_2}{(K_2-K_1)(K_3-K_1)} e^{-K_1 t}
++ \frac{A_0 K_1 K_2}{(K_1-K_2)(K_3-K_2)} e^{-K_2 t}
++ \frac{A_0 K_1 K_2}{(K_1-K_3)(K_2-K_3)} e^{-K_3 t}
+\]
+
+
 
 ---
 
-#### Step 4: Identify Green’s Function
+###  Final Results
 
-The Green’s function $G(x - x')$ satisfies:
 
-$$
-- D \frac{d^2 G(x - x')}{dx^2} + K^2 D\,G(x - x') = \delta(x - x')
-$$
 
-Solution:
+\[
+[A](t) = A_0 e^{-K_1 t}
+\]
 
-$$
-G(x - x') =
+
+
+
+
+\[
+[B](t) = \frac{A_0 K_1}{K_2 - K_1} \left( e^{-K_1 t} - e^{-K_2 t} \right)
+\]
+
+
+
+
+
+\[
+[C](t) =
+\frac{A_0 K_1 K_2}{(K_2-K_1)(K_3-K_1)} e^{-K_1 t}
++ \frac{A_0 K_1 K_2}{(K_1-K_2)(K_3-K_2)} e^{-K_2 t}
++ \frac{A_0 K_1 K_2}{(K_1-K_3)(K_2-K_3)} e^{-K_3 t}
+\]
+
+
+
+---
+
+> ✍️ **Added by:** Padmaja, 2026-10-12
