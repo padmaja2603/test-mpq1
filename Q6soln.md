@@ -273,9 +273,9 @@ Using the standard inverse Laplace transform
 
 $$
 \mathcal{L}^{-1}
-\left\{
+\left\(
 \frac{1}{(s+a)^2-\lambda^2}
-\right\}
+\right\)
 =\frac{1}{\lambda}e^{-at}\sinh(\lambda t)
 $$
 
