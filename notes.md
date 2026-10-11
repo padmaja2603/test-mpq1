@@ -121,6 +121,8 @@ $$
 
 ---
 
+> ✍️ **Added by:** Anisha, 2026-10-12
+
 ## 3. Fourier Transform
 
 The Fourier transform expresses a function in terms of its frequency components. It is useful in wave analysis and differential equations.
@@ -224,6 +226,8 @@ $$
 Thus, the Fourier transform of a Gaussian is also a Gaussian.
 
 ---
+
+> ✍️ **Added by:** Ronak, 2026-10-12
 
 ## 4. Green's Functions
 
@@ -490,6 +494,8 @@ $$
 
 ---
 
+> ✍️ **Added by:** Lokesh Bhadawat, 2026-10-12
+
 ## 6. Solving Differential Equations Using Laplace Transforms
 
 This is one of the most important applications covered in these notes.
@@ -597,6 +603,8 @@ $$
 Both initial conditions are satisfied.
 
 ---
+
+> ✍️ **Added by:** Vivek, 2026-10-12
 
 ## 7. Laplace Convolution Theorem
 
