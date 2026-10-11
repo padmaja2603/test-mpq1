@@ -118,70 +118,6 @@ $$
 S(x)=\frac{f(x^-)+f(x^+)}{2}
 $$
 
-**Exam tip:** Always check whether the function is even or odd before calculating the coefficients. This can considerably reduce the work.
-
-### 2.5 Worked example: Fourier series of $f(x)=x$ on $(-\pi,\pi)$
-
-**Step 1: Check symmetry**
-
-Since
-
-$$
-f(-x)=-x=-f(x),
-$$
-
-the function is odd. Therefore,
-
-$$
-a_0=0,\qquad a_n=0.
-$$
-
-Only the sine coefficients need to be calculated.
-
-**Step 2: Calculate $b_n$**
-
-$$
-b_n=\frac{1}{\pi}\int_{-\pi}^{\pi}x\sin(nx)\,dx
-$$
-
-Since $x\sin(nx)$ is even,
-
-$$
-b_n=\frac{2}{\pi}\int_0^\pi x\sin(nx)\,dx
-$$
-
-Using integration by parts,
-
-$$
-\int x\sin(nx)\,dx
-=-\frac{x\cos(nx)}{n}+\frac{\sin(nx)}{n^2}
-$$
-
-Therefore,
-
-$$
-b_n=\frac{2}{\pi}
-\left[-\frac{x\cos(nx)}{n}
-+\frac{\sin(nx)}{n^2}\right]_0^\pi
-$$
-
-Using $\sin(n\pi)=0$ and $\cos(n\pi)=(-1)^n$,
-
-$$
-b_n=\frac{2(-1)^{n+1}}{n}
-$$
-
-**Final answer**
-
-$$
-\boxed{
-x=2\sum_{n=1}^{\infty}
-\frac{(-1)^{n+1}}{n}\sin(nx)
-}
-$$
-
-This expansion is valid for $-\pi<x<\pi$.
-
 ---
 
 ## 3. Fourier Transform
@@ -226,12 +162,11 @@ Here, $k$ is the frequency variable in the transform representation.
 The Fourier transform preserves the squared integral norm:
 
 $$
-\boxed{
-\int_{-\infty}^{\infty}|f(x)|^2\,dx
+\int_{-\infty}^{\infty} |f(x)|^2 \, dx
 =
-\int_{-\infty}^{\infty}|\hat{f}(k)|^2\,dk
-}
+\int_{-\infty}^{\infty} |\hat{f}(k)|^2 \, dk
 $$
+
 
 ### 3.5 Convolution theorem
 
