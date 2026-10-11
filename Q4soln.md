@@ -157,7 +157,7 @@ $$
 Using integration by parts,
 
 $$
-\int \tau e^{(b-a)\tau}\d\tau
+\int \tau e^{(b-a)\tau}\,d\tau
 =\frac{\tau e^{(b-a)\tau}}{b-a}
 -\frac{e^{(b-a)\tau}}{(b-a)^2}
 $$
@@ -165,7 +165,7 @@ $$
 Evaluating between $0$ and $t$,
 
 $$
-\int_0^t \tau e^{(b-a)\tau}\d\tau
+\int_0^t \tau e^{(b-a)\tau}\,d\tau
 =\frac{te^{(b-a)t}}{b-a}
 -\frac{e^{(b-a)t}}{(b-a)^2}
 +\frac{1}{(b-a)^2}
