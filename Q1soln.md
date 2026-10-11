@@ -1,15 +1,19 @@
 
 # Q1 — Convolution of Two Rectangular Pulses
 
+
 Define the rectangular pulse
 
 $$
-\Pi_a(x)=
-\begin{aligned}
-&1 \quad \text{if } |x|<a,\\
-&0 \quad \text{if } |x|\geq a.
-\end{aligned}
+\Pi_a(x)=1 \quad \text{for } |x|<a
 $$
+
+and
+
+$$
+\Pi_a(x)=0 \quad \text{for } |x|\geq a.
+$$
+
 
 
 We find the convolution $(\Pi_a * \Pi_a)(x)$ and its Fourier transform.
