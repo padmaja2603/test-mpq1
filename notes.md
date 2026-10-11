@@ -1,3 +1,4 @@
+> ✍️ **Added by:** Your Name, 2026-10-12
 
 ## 1. Integral Transforms
 
@@ -680,7 +681,7 @@ $$
 Hence,
 
 $$
-\mathcal L^{-1}\left\{\frac{1}{s(s+1)}\right\}
+\mathcal L^{-1}\left\(\frac{1}{s(s+1)}\right\)
 =1-e^{-t}.
 $$
 
@@ -688,79 +689,4 @@ Both methods give the same result.
 
 ---
 
-## 8. Quick Revision Sheet
 
-### Fourier series
-
-$$
-f(x)=\frac{a_0}{2}
-+\sum_{n=1}^{\infty}
-(a_n\cos nx+b_n\sin nx)
-$$
-
-$$
-a_n=\frac1\pi\int_{-\pi}^{\pi}f(x)\cos nx\,dx
-$$
-
-$$
-b_n=\frac1\pi\int_{-\pi}^{\pi}f(x)\sin nx\,dx
-$$
-
-- Even function: cosine terms only.
-- Odd function: sine terms only.
-
-### Fourier transform
-
-$$
-\hat f(k)=\frac{1}{\sqrt{2\pi}}
-\int_{-\infty}^{\infty}f(x)e^{-ikx}\,dx
-$$
-
-$$
-\mathcal F[f']=ik\hat f(k),\qquad
-\mathcal F[f'']=-k^2\hat f(k)
-$$
-
-$$
-\mathcal F[f*g]=\sqrt{2\pi}\,\hat f(k)\hat g(k)
-$$
-
-### Green's functions
-
-$$
-L_xG(x,x')=\delta(x-x')
-$$
-
-$$
-f(x)=\int G(x,x')g(x')\,dx'
-$$
-
-Remember: differential operator, source term, boundary conditions, continuity, and derivative jump.
-
-### Laplace transform
-
-$$
-\mathcal L\{f(t)\}
-=\int_0^\infty e^{-st}f(t)\,dt
-$$
-
-$$
-\mathcal L\{f'\}=sF(s)-f(0)
-$$
-
-$$
-\mathcal L\{f''\}
-=s^2F(s)-sf(0)-f'(0)
-$$
-
-$$
-\mathcal L\{\sin(at)\}=\frac{a}{s^2+a^2}
-$$
-
-$$
-\mathcal L\{\cos(at)\}=\frac{s}{s^2+a^2}
-$$
-
----
-
-> ✍️ **Added by:** Your Name, 2026-10-12
