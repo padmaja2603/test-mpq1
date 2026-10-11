@@ -395,7 +395,7 @@ $$
 **6. Integration**
 
 $$
-\mathcal L\left\{\int_0^t f(u)\,du\right\}
+\mathcal L\left\(\int_0^t f(u)\,du\right\)
 =\frac{F(s)}{s}
 $$
 
