@@ -1,35 +1,50 @@
 
-# Q3 — Laplace Transforms Using Differentiation and Shift Properties
+# Q3 — Laplace Transform Properties
 
-Starting from the given result
+Given,
+
+$$
+\mathcal{L}\{e^{kt}\}=\frac{1}{s-k}, \qquad s>k
+$$
+
+Let
+
+$$
+\mathcal{L}\{f(t)\}=F(s)
+$$
+
+The differentiation property of the Laplace transform is
+
+$$
+\mathcal{L}\{tf(t)\}=-\frac{d}{ds}F(s)
+$$
+
+More generally,
+
+$$
+\mathcal{L}\{t^n f(t)\}=(-1)^n\frac{d^n}{ds^n}F(s)
+$$
+
+## (i) Find $\mathcal{L}\{te^{kt}\}$
+
+We know that
 
 $$
 \mathcal{L}\{e^{kt}\}=\frac{1}{s-k}
 $$
 
-and using the differentiation and shift properties of the Laplace transform, we obtain the following transforms without evaluating any transform integral directly.
-
-## (a) Find $\mathcal{L}\{te^{kt}\}$
-
-The differentiation property of the Laplace transform is
-
-$$
-\mathcal{L}\{tf(t)\}
-=-\frac{d}{ds}\mathcal{L}\{f(t)\}
-$$
-
-Taking $f(t)=e^{kt}$, we get
+Using the differentiation property,
 
 $$
 \mathcal{L}\{te^{kt}\}
 =-\frac{d}{ds}\mathcal{L}\{e^{kt}\}
 $$
 
-Substituting the given transform,
+Substituting the known transform,
 
 $$
 \mathcal{L}\{te^{kt}\}
-=-\frac{d}{ds}\left(\frac{1}{s-k}\right)
+=-\frac{d}{ds}\frac{1}{s-k}
 $$
 
 Differentiating with respect to $s$,
@@ -45,62 +60,92 @@ $$
 \boxed{\mathcal{L}\{te^{kt}\}=\frac{1}{(s-k)^2}}
 $$
 
-## (b) Find $\mathcal{L}\{\sin kt\}$
+## (ii) Find $\mathcal{L}\{\sin kt\}$
 
 Using Euler's identity,
 
 $$
-e^{ikt}=\cos kt+i\sin kt
+\sin kt=\frac{e^{ikt}-e^{-ikt}}{2i}
 $$
 
-The given Laplace transform formula can be extended to a complex exponent:
+Taking the Laplace transform of both sides,
+
+$$
+\mathcal{L}\{\sin kt\}
+=\frac{1}{2i}\left[
+\mathcal{L}\{e^{ikt}\}
+-\mathcal{L}\{e^{-ikt}\}
+\right]
+$$
+
+Using the formula
+
+$$
+\mathcal{L}\{e^{at}\}=\frac{1}{s-a}
+$$
+
+we obtain
 
 $$
 \mathcal{L}\{e^{ikt}\}=\frac{1}{s-ik}
 $$
 
-Multiplying the numerator and denominator by $s+ik$,
+and
 
 $$
-\mathcal{L}\{e^{ikt}\}
-=\frac{s+ik}{s^2+k^2}
+\mathcal{L}\{e^{-ikt}\}=\frac{1}{s+ik}
 $$
 
 Therefore,
 
 $$
-\mathcal{L}\{e^{ikt}\}
-=\frac{s}{s^2+k^2}
-+i\frac{k}{s^2+k^2}
+\mathcal{L}\{\sin kt\}
+=\frac{1}{2i}\left[
+\frac{1}{s-ik}-\frac{1}{s+ik}
+\right]
 $$
 
-Comparing the imaginary parts gives
+Taking a common denominator,
+
+$$
+\mathcal{L}\{\sin kt\}
+=\frac{1}{2i}
+\frac{(s+ik)-(s-ik)}{(s-ik)(s+ik)}
+$$
+
+Simplifying the numerator and denominator,
+
+$$
+\mathcal{L}\{\sin kt\}
+=\frac{1}{2i}\frac{2ik}{s^2+k^2}
+$$
+
+Hence,
 
 $$
 \boxed{\mathcal{L}\{\sin kt\}=\frac{k}{s^2+k^2}}
 $$
 
-## (c) Find $\mathcal{L}\{t\sin kt\}$
+## (iii) Find $\mathcal{L}\{t\sin kt\}$
 
 Using the differentiation property,
-
-$$
-\mathcal{L}\{tf(t)\}
-=-\frac{d}{ds}\mathcal{L}\{f(t)\}
-$$
-
-Taking $f(t)=\sin kt$, we obtain
 
 $$
 \mathcal{L}\{t\sin kt\}
 =-\frac{d}{ds}\mathcal{L}\{\sin kt\}
 $$
 
-From part (b),
+From part (ii),
+
+$$
+\mathcal{L}\{\sin kt\}=\frac{k}{s^2+k^2}
+$$
+
+Substituting,
 
 $$
 \mathcal{L}\{t\sin kt\}
-=-\frac{d}{ds}\left(\frac{k}{s^2+k^2}\right)
+=-\frac{d}{ds}\frac{k}{s^2+k^2}
 $$
 
 Differentiating with respect to $s$,
@@ -118,7 +163,7 @@ $$
 
 ## Final Results
 
-The required Laplace transforms are
+The three required Laplace transforms are
 
 $$
 \boxed{\mathcal{L}\{te^{kt}\}=\frac{1}{(s-k)^2}}
@@ -131,3 +176,6 @@ $$
 $$
 \boxed{\mathcal{L}\{t\sin kt\}=\frac{2ks}{(s^2+k^2)^2}}
 $$
+
+
+
